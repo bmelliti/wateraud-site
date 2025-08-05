@@ -1,7 +1,7 @@
-import { PageHero } from '@/components/PageHero';
-import { Button } from '@/components/Button';
-import { ServiceCard } from '@/components/ServiceCard';
-import { StatsBlock } from '@/components/StatsBlock';
+import { PageHero } from '@/components/sections/PageHero';
+import { Button } from '@/components/ui/Button';
+import { ServiceCard } from '@/components/sections/ServiceCard';
+import { StatsBlock } from '@/components/sections/StatsBlock';
 
 export default function Home() {
   /* cards + metrics pulled into arrays for clarity */

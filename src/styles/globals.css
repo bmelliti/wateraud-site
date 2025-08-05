@@ -1,15 +1,118 @@
+/* ───────────────  src/styles/globals.css  ─────────────── */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ↓ custom styles go *after* the directives */
+/* ------------------  Base layer  ------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-:root {
-  font-family: 'Inter', sans-serif;
+  /* Consistent box-sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Font smoothing */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Remove default outlines (we’ll style focus-visible) */
+  *:focus {
+    outline: none;
+  }
 }
 
-/* example skip-link */
-.skip-to-content {
-  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4
-         focus:bg-primary-600 focus:text-neutral-100 focus:rounded focus:px-4 focus:py-2;
+/* ------------------  Component layer  ------------------ */
+@layer components {
+  /* Skip-link for keyboard users */
+  .skip-link {
+    position: fixed;
+    left: -9999px;
+    top: 2rem;
+    z-index: 999;
+    background-color: theme('colors.primary.600');
+    color: theme('colors.white');
+    padding: theme('spacing.2') theme('spacing.4');
+    border-radius: theme('borderRadius.lg');
+    text-decoration: none;
+    font-weight: theme('fontWeight.medium');
+  }
+  .skip-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Reduced-motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Custom focus-visible outline */
+  .focus-visible:focus-visible {
+    outline: 2px solid theme('colors.primary.600');
+    outline-offset: 2px;
+    border-radius: theme('borderRadius.DEFAULT');
+  }
+
+  /* Minimum touch-target size */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* High-contrast mode tweaks */
+  @media (prefers-contrast: high) {
+    .bg-primary-600 {
+      background-color: theme('colors.primary.700');
+    }
+    .text-neutral-700 {
+      color: theme('colors.neutral.900');
+    }
+  }
 }
+
+/* ------------------  Utility layer  ------------------ */
+@layer utilities {
+  /* Visually hidden but focusable */
+  .sr-only-focusable:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    nav,
+    footer {
+      display: none !important;
+    }
+    a[href^='http']:after {
+      content: ' (' attr(href) ')';
+    }
+  }
+}
+
+/* ───────────────  end globals.css  ─────────────── */
