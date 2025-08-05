@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ↓ custom styles go *after* the directives */
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+/* example skip-link */
+.skip-to-content {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4
+         focus:bg-primary-600 focus:text-neutral-100 focus:rounded focus:px-4 focus:py-2;
+}
