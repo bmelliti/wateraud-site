@@ -3,8 +3,8 @@ export const SITE_CONFIG = {
   title: 'WaterAud - Expert Water Treatment Solutions',
   description: 'Professional water treatment consultancy for municipal and industrial clients.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://wateraud.com',
-  email: 'info@wateraud.com',
-  phone: '(123) 456-7890',
+  email: 'brahim.melliti@wateraud.com',
+  phone: '(613) 600-7408',
 };
 
 export const NAVIGATION_LINKS = [

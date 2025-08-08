@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     /* ---------- Language & emit ---------- */
-    "target": "ES2017",
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "jsx": "preserve",
     "noEmit": true,
 
     /* ---------- Module resolution ---------- */
-    "moduleResolution": "bundler",
-    "baseUrl": ".",                // enables path mapping
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]             // "@/lib/utils" -> "src/lib/utils.ts"
+      "@/*": ["src/*"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -22,19 +22,21 @@
     "allowJs": true,
     "isolatedModules": true,
     "incremental": true,
+    "forceConsistentCasingInFileNames": true,
 
     /* ---------- Plugins ---------- */
-    "plugins": [
-      { "name": "next" }           // Next.js language service
-    ]
+    "plugins": [{ "name": "next" }]
   },
 
   /* ---------- File globs ---------- */
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
+    "src/**/*",
+    ".next/types/**/*.ts",
+    "next.config.js",
+    "postcss.config.js",
+    "tailwind.config.ts",
+    "eslint.config.mjs"
   ],
   "exclude": ["node_modules"]
 }

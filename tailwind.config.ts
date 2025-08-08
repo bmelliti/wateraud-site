@@ -1,34 +1,40 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
-const config: Config = {
-content: [
-  './src/app/**/*.{ts,tsx}',        // keep as-is
-  './src/components/**/*.{ts,tsx}', // keep as-is
-  './src/styles/**/*.css',          // ← replace this line
-],
+export default {
+  darkMode: 'class',
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/styles/**/*.{css}',
+  ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1440px',
+      },
+    },
     extend: {
       colors: {
-        primary: {
-          500: '#33A7FF',
-          600: '#008CDB',
-          700: '#006CB0',
-        },
-        neutral: {
-          100: '#F8FAFC',
-          900: '#0E0E0E',
-        },
-        accent: {
-          50:  '#E4F3FF',
-          100: '#AAD2EF',
-        },
-        success: '#10B981',
-        warning: '#F59E0B',
-        error:   '#EF4444',
+        // Use any palette you like; sky is a nice default
+        primary: colors.sky,
+        // You already use neutral in your CSS; Tailwind has it by default.
+        // If you want to alias, uncomment the next line:
+        // neutral: colors.neutral,
+      },
+      borderRadius: {
+        '2xl': '1rem',
       },
     },
   },
-  plugins: [],
-};
-
-export default config;
+  plugins: [
+    // If you later install plugins, add them here, e.g.:
+    // require('@tailwindcss/forms'),
+    // require('@tailwindcss/typography'),
+  ],
+} satisfies Config

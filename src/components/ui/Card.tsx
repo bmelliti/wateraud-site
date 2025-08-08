@@ -8,16 +8,17 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', children, ...props }, ref) => {
     const variants = {
-      default: 'bg-white border border-neutral-200',
-      outlined: 'bg-transparent border-2 border-neutral-300',
-      elevated: 'bg-white shadow-lg',
+      default:  'bg-white border border-neutral-200 hover:border-primary-600',
+      outlined: 'bg-transparent border-2 border-neutral-300 hover:border-primary-600',
+      elevated: 'bg-white shadow-lg hover:shadow-xl',
     };
 
     return (
       <div
         ref={ref}
+        /* group enables group-hover in children */
         className={cn(
-          'rounded-lg p-6 transition-all duration-200',
+          'group rounded-lg p-6 transition-all duration-200 hover:-translate-y-1',
           variants[variant],
           className
         )}

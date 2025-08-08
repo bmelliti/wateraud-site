@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "industries": "Industries",
+    "caseStudies": "Case Studies",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Water Treatment Made Simple",
+      "subtitle": "Independent expertise for municipal & industrial engineers—from technology choice to optimised operations.",
+      "cta": "Request a Consultation"
+    },
+    "intro": "WaterAud cuts through complexity with neutral advice, lab-backed optimisation and boots-on-the-ground support—so you meet quality targets at the lowest lifecycle cost.",
+    "stats": {
+      "yearsExperience": { "label": "Years Experience", "desc": "hands-on field & laboratory experience" },
+      "chemicalSavings": { "label": "Chemical Savings", "desc": "average reduction in chemical spend after our optimisation projects" },
+      "successfulEngagements": { "label": "Successful Engagements", "desc": "delivered across municipal & industrial sites" },
+      "trustedPartners": { "label": "Trusted Partners", "desc": "equipment & chemical partners in our supplier network" }
+    },
+    "services": {
+      "heading": "Services Snapshot",
+      "explorePrefix": "Explore the full range on our",
+      "exploreLink": "Services",
+      "exploreSuffix": "page.",
+      "techSelection": {
+        "title": "Technology Selection & Trade-off Analysis",
+        "description": "Data-driven comparison of clarification technologies, membranes, IX, filtration & more",
+        "features": ["Confident design decisions", "Reduced CAPEX risk"]
+      },
+      "chemOptim": {
+        "title": "Chemical Optimisation & Bench Testing",
+        "description": "On-site jar tests and pilot protocols",
+        "features": ["10–25% chemical savings", "Better effluent quality"]
+      },
+      "commissioning": {
+        "title": "Commissioning Support & Training",
+        "description": "SOPs, functional testing, operator coaching",
+        "features": ["Smooth start-up", "Minimal downtime"]
+      }
+    },
+    "faq": {
+      "industries": { "q": "What industries do you serve?", "a": "Municipal water utilities plus food & beverage, pharmaceutical and general manufacturing plants." },
+      "pricing": { "q": "How do you charge for your services?", "a": "Most engagements are fixed-fee with clear deliverables; optimisation projects can include performance incentives." },
+      "vendorNeutral": { "q": "Do you sell equipment or chemicals?", "a": "No. Remaining vendor-neutral lets us recommend the best solution for your application." }
+    },
+    "cta": {
+      "title": "Ready to optimise your water treatment?",
+      "description": "Let's discuss how we can help you reduce costs and improve efficiency",
+      "primary": "Request a Consultation"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About WaterAud",
+      "subtitle": "Clarity and confidence in water-treatment decision-making"
+    },
+    "story": {
+      "title": "Our Story",
+      "body": "WaterAud was founded to bring clarity and confidence to water-treatment decision-making. After years troubleshooting plants across Canada, our engineers noticed a pattern: projects rarely failed for lack of technology—they failed for lack of unbiased guidance. WaterAud fills that gap. We translate complex chemistry and vendor jargon into practical strategies, walking beside you from the first jar test to the final punch-list. Success, for us, means your water meets spec every day at the lowest lifecycle cost."
+    },
+    "mission": {
+      "title": "Mission",
+      "body": "Ensure the success of municipal and industrial water-treatment projects through independent, science-driven advice."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "A world where every drop of water is treated efficiently and sustainably."
+    },
+    "values": {
+      "heading": "Values",
+      "items": [
+        { "name": "Simplicity", "description": "make the complex clear" },
+        { "name": "Integrity", "description": "vendor-neutral, client-first decisions" },
+        { "name": "Evidence-Based Practice", "description": "data over opinion" },
+        { "name": "Client Empowerment", "description": "transfer knowledge, not dependence" }
+      ]
+    },
+    "team": {
+      "heading": "Team",
+      "members": [
+        {
+          "id": "brahim",
+          "name": "Brahim Melliti",
+          "title": "Principal Water Engineer & Founder",
+          "bio": "Water-treatment engineer with 5+ years designing, optimising and commissioning plants across Canada."
+        }
+      ]
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "End-to-end water treatment solutions tailored to your needs"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Let's discuss how our services can help you achieve your water treatment goals",
+      "primary": "Schedule Consultation"
+    },
+    "items": {
+      "technologySelection": {
+        "title": "Technology Selection & Trade-off Analysis",
+        "tagline": "Pick the right process the first time",
+        "description": "From membranes and ion-exchange to media filtration and biological treatment, we evaluate every viable option against raw-water quality, footprint, energy and lifecycle costs.",
+        "features": ["Reduced CAPEX risk", "Data-driven decisions", "Vendor-neutral recommendation"]
+      },
+      "supplierLiaison": {
+        "title": "Supplier Liaison & CAPEX Estimation",
+        "tagline": "Reliable budget numbers—fast",
+        "description": "We prepare equipment schedules, issue RFQs to vetted vendors and normalise bids so you compare apples to apples.",
+        "features": ["Faster procurement", "Transparent pricing", "Negotiation leverage"]
+      },
+      "chemicalOptimisation": {
+        "title": "Chemical Optimisation & Bench Testing",
+        "tagline": "Cut chemical spend, boost performance",
+        "description": "On-site jar tests and pilot protocols reveal the optimal dose and sequence for your specific water matrix.",
+        "features": ["10–25% chemical savings", "Improved effluent quality", "Reduced sludge volumes"]
+      },
+      "commissioningSupport": {
+        "title": "Commissioning Support & Training",
+        "tagline": "Start-up without headaches",
+        "description": "Step-by-step SOPs, functional testing and operator training to hit design spec quickly.",
+        "features": ["Smooth start-up", "Reduced downtime", "Knowledge transfer"]
+      },
+      "regulatoryNavigation": {
+        "title": "Regulatory Navigation",
+        "tagline": "Stay compliant, stay operational",
+        "description": "Interpret regulations, prepare submissions and liaise with authorities on your behalf.",
+        "features": ["Compliance assurance", "Reduced admin burden", "Avoided fines"]
+      }
+    }
+  },
+  "industriesPage": {
+    "hero": {
+      "title": "Industries We Serve",
+      "subtitle": "Tailored solutions for your sector's unique challenges"
+    },
+    "items": [
+      {
+        "id": "municipal",
+        "title": "Municipal Drinking Water",
+        "description": "Aging infrastructure, strict quality limits and tight budgets demand more than off-the-shelf solutions."
+      },
+      {
+        "id": "industrial",
+        "title": "Industrial Process Water",
+        "description": "Variable feed quality and downtime risk can cripple production—rapid diagnostics and pilots mitigate risk."
+      },
+      {
+        "id": "wastewater",
+        "title": "Wastewater & Reuse",
+        "description": "Evaluate advanced oxidation, membranes and nutrient-removal options to meet permits while reducing energy."
+      }
+    ],
+    "ctaButton": "Request Consultation"
+  },
+  "caseStudiesPage": {
+    "hero": {
+      "title": "Client Success Stories",
+      "subtitle": "See how we've helped organizations transform their water treatment"
+    },
+    "badgeMunicipal": "Municipal",
+    "readMore": "Read Full Case Study →",
+    "resultsHeading": "Measurable Impact",
+    "metrics": {
+      "costSavings": "Cost Savings",
+      "waterTreated": "Water Treated",
+      "complianceRate": "Compliance Rate",
+      "clientRetention": "Client Retention"
+    }
+  },
+  "contactPage": {
+    "hero": { "title": "Let's Discuss Your Project" },
+    "sidebar": {
+      "heading": "Get in Touch",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Office Hours",
+      "hoursValue": "Monday – Friday\n8:00 AM – 5:00 PM EST",
+      "response": "Response Time",
+      "responseValue": "We typically respond within 24 business hours"
+    }
+  },
+  "termsPage": {
+    "hero": { "title": "Terms of Service", "subtitle": "Last updated: January 1, 2024" }
+  },
+  "errorPage": {
+    "title": "Oops!",
+    "subtitle": "Something went wrong",
+    "message": "We apologize for the inconvenience. Please try again or contact support if the problem persists.",
+    "tryAgain": "Try again",
+    "goHome": "Go home"
+  },
+  "footer": {
+    "company": "WaterAud",
+    "tagline": "Expert water treatment solutions for municipal and industrial clients.",
+    "servicesHeading": "Services",
+    "companyHeading": "Company",
+    "contactHeading": "Contact Us",
+    "links": {
+      "about": "About Us",
+      "caseStudies": "Case Studies",
+      "industries": "Industries",
+      "contact": "Contact"
+    },
+    "getDirections": "Get Directions",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved"
+  },
+  "forms": {
+    "contact": {
+      "labels": {
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "phone": "Phone",
+        "service": "Service Interest",
+        "message": "Project Description"
+      },
+      "selectPlaceholder": "Select a service",
+      "options": [
+        { "value": "water-treatment", "label": "Water Treatment Solutions" },
+        { "value": "optimization", "label": "Optimization Services" },
+        { "value": "implementation", "label": "Implementation Support" },
+        { "value": "compliance", "label": "Regulatory Compliance" }
+      ],
+      "buttons": {
+        "send": "Send Message",
+        "sending": "Sending..."
+      },
+      "errors": {
+        "name": "Name must be at least 2 characters",
+        "email": "Invalid email address",
+        "message": "Message must be at least 10 characters"
+      },
+      "toast": {
+        "success": "Message sent successfully! We'll be in touch soon.",
+        "error": "Failed to send message. Please try again."
+      }
+    }
+  }
+}

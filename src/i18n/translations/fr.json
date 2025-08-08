@@ -1,0 +1,245 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "industries": "Secteurs",
+    "caseStudies": "Études de cas",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Traitement d’eau simplifié",
+      "subtitle": "Expertise indépendante pour les ingénieurs municipaux et industriels — du choix technologique à l’optimisation des opérations.",
+      "cta": "Demander une consultation"
+    },
+    "intro": "WaterAud élimine la complexité grâce à des conseils neutres, une optimisation validée en laboratoire et un soutien sur le terrain — afin que vous atteigniez vos objectifs de qualité au coût global le plus bas.",
+    "stats": {
+      "yearsExperience": { "label": "Années d’expérience", "desc": "expérience pratique sur le terrain et en laboratoire" },
+      "chemicalSavings": { "label": "Économies de produits chimiques", "desc": "réduction moyenne des coûts en produits chimiques après nos projets d’optimisation" },
+      "successfulEngagements": { "label": "Projets réussis", "desc": "réalisés dans des sites municipaux et industriels" },
+      "trustedPartners": { "label": "Partenaires de confiance", "desc": "partenaires en équipement et en produits chimiques dans notre réseau de fournisseurs" }
+    },
+    "services": {
+      "heading": "Aperçu des services",
+      "explorePrefix": "Découvrez l’ensemble de notre offre sur la",
+      "exploreLink": "page Services",
+      "exploreSuffix": ".",
+      "techSelection": {
+        "title": "Sélection technologique et analyse comparative",
+        "description": "Comparaison basée sur les données des technologies de clarification, membranes, échange d’ions, filtration et plus",
+        "features": ["Décisions de conception éclairées", "Réduction du risque CAPEX"]
+      },
+      "chemOptim": {
+        "title": "Optimisation chimique et essais en laboratoire",
+        "description": "Essais de jarres sur site et protocoles pilotes",
+        "features": ["10–25 % d’économies de produits chimiques", "Meilleure qualité d’effluent"]
+      },
+      "commissioning": {
+        "title": "Soutien à la mise en service et formation",
+        "description": "SOP, tests fonctionnels, accompagnement des opérateurs",
+        "features": ["Démarrage en douceur", "Temps d’arrêt minimal"]
+      }
+    },
+    "faq": {
+      "industries": { "q": "Quels secteurs servez-vous ?", "a": "Services d’eau municipaux ainsi que les secteurs agroalimentaire, pharmaceutique et manufacturier général." },
+      "pricing": { "q": "Comment facturez-vous vos services ?", "a": "La plupart des mandats sont à prix fixe avec livrables clairs ; les projets d’optimisation peuvent inclure des incitatifs de performance." },
+      "vendorNeutral": { "q": "Vendez-vous des équipements ou des produits chimiques ?", "a": "Non. Rester neutre vis-à-vis des fournisseurs nous permet de recommander la meilleure solution pour votre application." }
+    },
+    "cta": {
+      "title": "Prêt à optimiser votre traitement de l’eau ?",
+      "description": "Discutons de la manière dont nous pouvons vous aider à réduire les coûts et améliorer l’efficacité",
+      "primary": "Demander une consultation"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "À propos de WaterAud",
+      "subtitle": "Clarté et confiance dans la prise de décision en traitement de l’eau"
+    },
+    "story": {
+      "title": "Notre histoire",
+      "body": "WaterAud a été créée pour apporter clarté et confiance aux décisions en traitement de l’eau. Après des années à dépanner des usines à travers le Canada, nos ingénieurs ont constaté un schéma : les projets échouent rarement par manque de technologie — ils échouent par manque de conseils impartiaux. WaterAud comble ce manque en traduisant la chimie complexe et le jargon des fournisseurs en stratégies pratiques, de l’essai de jarres à la liste de fin de chantier, afin d’atteindre les spécifications au coût global le plus bas."
+    },
+    "mission": {
+      "title": "Mission",
+      "body": "Assurer la réussite des projets municipaux et industriels grâce à des conseils indépendants et fondés sur la science."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "Un monde où chaque goutte d’eau est traitée efficacement et durablement."
+    },
+    "values": {
+      "heading": "Valeurs",
+      "items": [
+        { "name": "Simplicité", "description": "rendre le complexe clair" },
+        { "name": "Intégrité", "description": "décisions impartiales, centrées client" },
+        { "name": "Pratique fondée sur les preuves", "description": "les données avant l’opinion" },
+        { "name": "Autonomisation du client", "description": "transmettre le savoir, pas la dépendance" }
+      ]
+    },
+    "team": {
+      "heading": "Équipe",
+      "members": [
+        {
+          "id": "brahim",
+          "name": "Brahim Melliti",
+          "title": "Ingénieur principal en traitement de l’eau & fondateur",
+          "bio": "Ingénieur en traitement de l’eau avec plus de 5 ans d’expérience en conception, optimisation et mise en service d’usines au Canada."
+        }
+      ]
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "title": "Nos services",
+      "subtitle": "Des solutions de bout en bout adaptées à vos besoins"
+    },
+    "cta": {
+      "title": "Prêt à démarrer ?",
+      "description": "Voyons comment nos services peuvent vous aider à atteindre vos objectifs",
+      "primary": "Planifier une consultation"
+    },
+    "items": {
+      "technologySelection": {
+        "title": "Sélection technologique et analyse comparative",
+        "tagline": "Choisir le bon procédé dès le départ",
+        "description": "Des membranes et de l’échange d’ions à la filtration sur média et au biologique : évaluation selon qualité d’eau brute, empreinte, énergie et coûts de cycle de vie.",
+        "features": ["Risque CAPEX réduit", "Décisions fondées sur les données", "Recommandation impartiale"]
+      },
+      "supplierLiaison": {
+        "title": "Interface fournisseurs & estimation CAPEX",
+        "tagline": "Des budgets fiables — rapidement",
+        "description": "Préparation des listes d’équipements, RFQ à des fournisseurs validés et normalisation des offres pour comparer équitablement.",
+        "features": ["Approvisionnement plus rapide", "Tarification transparente", "Levier de négociation"]
+      },
+      "chemicalOptimisation": {
+        "title": "Optimisation chimique & essais",
+        "tagline": "Réduire les coûts, améliorer la performance",
+        "description": "Essais de jarres et protocoles pilotes pour déterminer dose et séquence optimales selon votre matrice d’eau.",
+        "features": ["10–25 % d’économies", "Meilleure qualité d’effluent", "Moins de boues"]
+      },
+      "commissioningSupport": {
+        "title": "Mise en service & formation",
+        "tagline": "Un démarrage sans tracas",
+        "description": "SOP détaillées, essais fonctionnels et formation opérateur pour atteindre rapidement les spécifications.",
+        "features": ["Démarrage fluide", "Moins d’arrêts", "Transfert de savoir"]
+      },
+      "regulatoryNavigation": {
+        "title": "Navigation réglementaire",
+        "tagline": "Rester conforme, rester opérationnel",
+        "description": "Interprétation des exigences, préparation des dossiers et interface avec les autorités.",
+        "features": ["Conformité assurée", "Charge admin réduite", "Amendes évitées"]
+      }
+    }
+  },
+  "industriesPage": {
+    "hero": {
+      "title": "Secteurs desservis",
+      "subtitle": "Des solutions adaptées aux défis de votre secteur"
+    },
+    "items": [
+      {
+        "id": "municipal",
+        "title": "Eau potable municipale",
+        "description": "Vieillissement des infrastructures, contraintes de qualité strictes et budgets limités : au-delà des solutions standard."
+      },
+      {
+        "id": "industrial",
+        "title": "Eau de procédé industriel",
+        "description": "Qualité d’eau variable et risques d’arrêt : diagnostics rapides et pilotes pour maîtriser les risques."
+      },
+      {
+        "id": "wastewater",
+        "title": "Eaux usées & réutilisation",
+        "description": "Oxydation avancée, membranes, retrait des nutriments : répondre aux permis tout en réduisant l’énergie."
+      }
+    ],
+    "ctaButton": "Demander une consultation"
+  },
+  "caseStudiesPage": {
+    "hero": {
+      "title": "Histoires de réussite",
+      "subtitle": "Comment nous avons transformé le traitement de l’eau chez nos clients"
+    },
+    "badgeMunicipal": "Municipal",
+    "readMore": "Lire l’étude complète →",
+    "resultsHeading": "Impact mesurable",
+    "metrics": {
+      "costSavings": "Économies",
+      "waterTreated": "Eau traitée",
+      "complianceRate": "Taux de conformité",
+      "clientRetention": "Fidélité client"
+    }
+  },
+  "contactPage": {
+    "hero": { "title": "Discutons de votre projet" },
+    "sidebar": {
+      "heading": "Contactez-nous",
+      "phone": "Téléphone",
+      "email": "Courriel",
+      "hours": "Heures d’ouverture",
+      "hoursValue": "Lundi – Vendredi\n08:00 – 17:00 (EST)",
+      "response": "Délai de réponse",
+      "responseValue": "Nous répondons généralement sous 24 h ouvrables"
+    }
+  },
+  "termsPage": {
+    "hero": { "title": "Conditions d’utilisation", "subtitle": "Dernière mise à jour : 1 janvier 2024" }
+  },
+  "errorPage": {
+    "title": "Oups !",
+    "subtitle": "Un problème est survenu",
+    "message": "Nous sommes désolés pour le désagrément. Réessayez ou contactez le support si le problème persiste.",
+    "tryAgain": "Réessayer",
+    "goHome": "Accueil"
+  },
+  "footer": {
+    "company": "WaterAud",
+    "tagline": "Solutions expertes de traitement de l’eau pour clients municipaux et industriels.",
+    "servicesHeading": "Services",
+    "companyHeading": "Entreprise",
+    "contactHeading": "Nous contacter",
+    "links": {
+      "about": "À propos",
+      "caseStudies": "Études de cas",
+      "industries": "Secteurs",
+      "contact": "Contact"
+    },
+    "getDirections": "Itinéraire",
+    "terms": "Conditions d’utilisation",
+    "rights": "Tous droits réservés"
+  },
+  "forms": {
+    "contact": {
+      "labels": {
+        "name": "Nom",
+        "email": "Courriel",
+        "company": "Entreprise",
+        "phone": "Téléphone",
+        "service": "Service d’intérêt",
+        "message": "Description du projet"
+      },
+      "selectPlaceholder": "Sélectionner un service",
+      "options": [
+        { "value": "water-treatment", "label": "Solutions de traitement de l’eau" },
+        { "value": "optimization", "label": "Services d’optimisation" },
+        { "value": "implementation", "label": "Accompagnement à la mise en œuvre" },
+        { "value": "compliance", "label": "Conformité réglementaire" }
+      ],
+      "buttons": {
+        "send": "Envoyer le message",
+        "sending": "Envoi…"
+      },
+      "errors": {
+        "name": "Le nom doit comporter au moins 2 caractères",
+        "email": "Adresse courriel invalide",
+        "message": "Le message doit comporter au moins 10 caractères"
+      },
+      "toast": {
+        "success": "Message envoyé avec succès ! Nous vous répondrons rapidement.",
+        "error": "Échec de l’envoi du message. Veuillez réessayer."
+      }
+    }
+  }
+}
