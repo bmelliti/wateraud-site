@@ -34,7 +34,6 @@ export function Navbar({ locale, translations }: NavbarProps) {
     { href: `/${locale}/about`, label: translations.nav.about },
     { href: `/${locale}/services`, label: translations.nav.services },
     { href: `/${locale}/industries`, label: translations.nav.industries },
-    { href: `/${locale}/case-studies`, label: translations.nav.caseStudies },
     { href: `/${locale}/contact`, label: translations.nav.contact },
   ];
 

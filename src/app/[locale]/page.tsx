@@ -31,12 +31,12 @@ export default async function HomePage({ params: { locale } }: RouteParams) {
       suffix: '%',
       description: t.home.stats.chemicalSavings.desc,
     },
-    {
-      value: '5',
-      label: t.home.stats.successfulEngagements.label,
-      suffix: '+',
-      description: t.home.stats.successfulEngagements.desc,
-    },
+    // {
+    //   value: '5',
+    //   label: t.home.stats.successfulEngagements.label,
+    //   suffix: '+',
+    //   description: t.home.stats.successfulEngagements.desc,
+    // },
     {
       value: '10',
       label: t.home.stats.trustedPartners.label,
