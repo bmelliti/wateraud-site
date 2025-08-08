@@ -1,7 +1,8 @@
+// src/components/layout/Footer.tsx
 import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Translations } from '@/i18n/server';
-import { SITE_CONFIG, SERVICES } from '@/lib/constants';
+import { SITE_CONFIG } from '@/lib/constants';
 
 type Props = {
   locale: Locale;
@@ -10,47 +11,57 @@ type Props = {
 
 export function Footer({ locale, translations }: Props) {
   const t = translations.footer;
-  const currentYear = new Date().getFullYear();
+
+  // Fallback in case servicesMenu is missing
+  const fallbackServicesMenu =
+    translations.servicesPage?.items
+      ? [
+          { id: 'technology-selection', label: translations.servicesPage.items.technologySelection.title },
+          { id: 'chemical-optimisation', label: translations.servicesPage.items.chemicalOptimisation.title },
+          { id: 'commissioning-support', label: translations.servicesPage.items.commissioningSupport.title },
+          { id: 'regulatory-navigation', label: translations.servicesPage.items.regulatoryNavigation.title },
+        ]
+      : [];
+
+  const servicesMenu = t.servicesMenu?.length ? t.servicesMenu : fallbackServicesMenu;
 
   return (
     <footer className="bg-neutral-900 text-neutral-100" role="contentinfo">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-          {/* Company Info */}
-          <div className="col-span-1">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-12">
+          {/* Company */}
+          <div>
             <div className="mb-4 flex items-center space-x-2">
-              <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <g fill="none" fillRule="evenodd">
                   <path d="M15 5C15 5 5 15 5 25C5 30.5228 9.47715 35 15 35C20.5228 35 25 30.5228 25 25C25 15 15 5 15 5Z" fill="#FFFFFF"/>
                   <path d="M20 10C20 10 12 18 12 25C12 28.3137 14.6863 31 18 31C21.3137 31 24 28.3137 24 25C24 18 20 10 20 10Z" fill="#E4F3FF"/>
                 </g>
               </svg>
-              <span className="text-xl font-semibold text-white">WaterAud</span>
+              <span className="text-xl font-semibold text-white">{t.company}</span>
             </div>
-            <p className="text-sm text-neutral-400">
-              {t.tagline}
-            </p>
+            <p className="text-sm text-neutral-400">{t.tagline}</p>
           </div>
 
           {/* Services */}
-          <div className="col-span-1">
+          <div>
             <h2 className="mb-4 text-lg font-semibold text-white">{t.servicesHeading}</h2>
             <ul className="space-y-2">
-              {SERVICES.slice(0, 4).map((service) => (
-                <li key={service.id}>
+              {servicesMenu.map((item) => (
+                <li key={item.id}>
                   <Link
-                    href={`/${locale}/services#${service.id}`}
+                    href={`/${locale}/services#${item.id}`}
                     className="text-sm text-neutral-400 transition-colors hover:text-primary-400"
                   >
-                    {service.category}
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company Links */}
-          <div className="col-span-1">
+          {/* Company links */}
+          <div>
             <h2 className="mb-4 text-lg font-semibold text-white">{t.companyHeading}</h2>
             <ul className="space-y-2">
               <li>
@@ -76,8 +87,8 @@ export function Footer({ locale, translations }: Props) {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="col-span-1">
+          {/* Contact */}
+          <div>
             <h2 className="mb-4 text-lg font-semibold text-white">{t.contactHeading}</h2>
             <ul className="space-y-2 text-sm">
               <li>
@@ -109,12 +120,12 @@ export function Footer({ locale, translations }: Props) {
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className="border-t border-neutral-800 bg-black">
-        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+      {/* Bottom bar */}
+      <div className="bg-black border-t border-neutral-800">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col items-center justify-between text-center md:flex-row md:text-left">
             <p className="text-sm text-neutral-400">
-              © {currentYear} WaterAud. {t.rights}.
+              © {new Date().getFullYear()} {t.company}. {t.rights}.
             </p>
             <Link
               href={`/${locale}/terms`}

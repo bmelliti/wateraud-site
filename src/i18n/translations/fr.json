@@ -206,6 +206,12 @@
       "industries": "Secteurs",
       "contact": "Contact"
     },
+    "servicesMenu": [
+      { "id": "technology-selection", "label": "Sélection technologique" },
+      { "id": "chemical-optimisation", "label": "Optimisation chimique" },
+      { "id": "commissioning-support", "label": "Mise en service" },
+      { "id": "regulatory-navigation", "label": "Navigation réglementaire" }
+    ],
     "getDirections": "Itinéraire",
     "terms": "Conditions d’utilisation",
     "rights": "Tous droits réservés"

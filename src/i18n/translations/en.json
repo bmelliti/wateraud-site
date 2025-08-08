@@ -206,6 +206,12 @@
       "industries": "Industries",
       "contact": "Contact"
     },
+    "servicesMenu": [
+      { "id": "technology-selection", "label": "Technology Selection" },
+      { "id": "chemical-optimisation", "label": "Chemical Optimisation" },
+      { "id": "commissioning-support", "label": "Commissioning Support" },
+      { "id": "regulatory-navigation", "label": "Regulatory Navigation" }
+    ],
     "getDirections": "Get Directions",
     "terms": "Terms of Service",
     "rights": "All rights reserved"
