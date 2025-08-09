@@ -1,43 +1,31 @@
 // src/app/[locale]/(routes)/industries/page.tsx
 import type { Metadata } from 'next';
-import type { Locale } from '@/i18n/config';
-import { getTranslations } from '@/i18n/server';
+export const metadata: Metadata = { title: 'Industries We Serve – WaterAud' };
+
 import { PageHero } from '@/components/sections/PageHero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { generateMetadata as makeMeta } from '@/lib/metadata';
 import Link from 'next/link';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
-  return makeMeta({
-    title: locale === 'fr' ? 'Secteurs desservis – WaterAud' : 'Industries We Serve – WaterAud',
-    description: locale === 'fr'
-      ? 'Solutions de traitement de l’eau pour municipal, industriel et réutilisation.'
-      : 'Municipal, industrial & reuse water-treatment solutions.',
-    path: `/${locale}/industries`,
-  });
-}
-
-export default async function IndustriesPage({ params: { locale } }: { params: { locale: Locale } }) {
-  const t = await getTranslations(locale);
+export default function IndustriesPage() {
+  const industries = [
+    { id: 'municipal', title: 'Municipal Drinking Water', description: 'Aging infrastructure, strict quality limits and tight budgets...' },
+    { id: 'industrial', title: 'Industrial Process Water', description: 'Variable feed quality and downtime risk can cripple production...' },
+    { id: 'wastewater', title: 'Wastewater & Reuse', description: 'Emerging contaminants and soaring energy costs challenge compliance...' },
+  ];
 
   return (
     <>
-      <PageHero title={t.industriesPage.hero.title} subtitle={t.industriesPage.hero.subtitle} />
-
+      <PageHero title="Industries We Serve" subtitle="Tailored solutions for your sector's unique challenges" />
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8">
-            {t.industriesPage.items.map((ind) => (
-              <Card key={ind.id} id={ind.id} className="scroll-mt-24">
-                <CardHeader>
-                  <CardTitle className="text-2xl">{ind.title}</CardTitle>
-                </CardHeader>
+            {industries.map((industry) => (
+              <Card key={industry.id} id={industry.id} className="scroll-mt-24">
+                <CardHeader><CardTitle className="text-2xl">{industry.title}</CardTitle></CardHeader>
                 <CardContent>
-                  <p className="mb-6 text-neutral-700">{ind.description}</p>
-                  <Link href={`/${locale}/contact`}>
-                    <Button>{t.industriesPage.ctaButton}</Button>
-                  </Link>
+                  <p className="mb-6 text-neutral-700">{industry.description}</p>
+                  <Link href="/contact"><Button>Request Consultation</Button></Link>
                 </CardContent>
               </Card>
             ))}

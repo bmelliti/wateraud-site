@@ -4,10 +4,7 @@ import type { Locale } from '@/i18n/config';
 import type { Translations } from '@/i18n/server';
 import { SITE_CONFIG } from '@/lib/constants';
 
-type Props = {
-  locale: Locale;
-  translations: Translations;
-};
+type Props = { locale: Locale; translations: Translations };
 
 export function Footer({ locale, translations }: Props) {
   const t = translations.footer;
@@ -26,7 +23,6 @@ export function Footer({ locale, translations }: Props) {
     <footer className="bg-neutral-900 text-neutral-100" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-12">
-          {/* Company */}
           <div>
             <div className="mb-4 flex items-center space-x-2">
               <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
@@ -40,16 +36,12 @@ export function Footer({ locale, translations }: Props) {
             <p className="text-sm text-neutral-400">{t.tagline}</p>
           </div>
 
-          {/* Services */}
           <div>
             <h2 className="mb-4 text-lg font-semibold text-white">{t.servicesHeading}</h2>
             <ul className="space-y-2">
               {servicesMenu.map((item) => (
                 <li key={item.id}>
-                  <Link
-                    href={`/${locale}/services#${item.id}`}
-                    className="text-sm text-neutral-400 transition-colors hover:text-primary-400"
-                  >
+                  <Link href={`/${locale}/services#${item.id}`} className="text-sm text-neutral-400 hover:text-primary-400">
                     {item.label}
                   </Link>
                 </li>
@@ -57,7 +49,6 @@ export function Footer({ locale, translations }: Props) {
             </ul>
           </div>
 
-          {/* Company links */}
           <div>
             <h2 className="mb-4 text-lg font-semibold text-white">{t.companyHeading}</h2>
             <ul className="space-y-2">
@@ -67,20 +58,11 @@ export function Footer({ locale, translations }: Props) {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h2 className="mb-4 text-lg font-semibold text-white">{t.contactHeading}</h2>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href={`tel:${SITE_CONFIG.phone.replace(/\D/g, '')}`} className="text-neutral-400 hover:text-primary-400">
-                  {SITE_CONFIG.phone}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${SITE_CONFIG.email}`} className="text-neutral-400 hover:text-primary-400">
-                  {SITE_CONFIG.email}
-                </a>
-              </li>
+              <li><a href={`tel:${SITE_CONFIG.phone.replace(/\D/g, '')}`} className="text-neutral-400 hover:text-primary-400">{SITE_CONFIG.phone}</a></li>
+              <li><a href={`mailto:${SITE_CONFIG.email}`} className="text-neutral-400 hover:text-primary-400">{SITE_CONFIG.email}</a></li>
               <li className="pt-2">
                 <Link href={`/${locale}/contact`} className="inline-flex items-center font-medium text-primary-400 hover:text-primary-300">
                   {t.getDirections} →
@@ -91,7 +73,6 @@ export function Footer({ locale, translations }: Props) {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-neutral-800 bg-black">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between text-center md:flex-row md:text-left">

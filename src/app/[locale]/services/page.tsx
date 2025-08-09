@@ -1,85 +1,69 @@
 // src/app/[locale]/(routes)/services/page.tsx
 import type { Metadata } from 'next';
-import type { Locale } from '@/i18n/config';
-import { getTranslations } from '@/i18n/server';
+export const metadata: Metadata = { title: 'Our Services – WaterAud' };
 
 import { PageHero } from '@/components/sections/PageHero';
 import { ServiceCard } from '@/components/sections/ServiceCard';
 import { CTASection } from '@/components/sections/CTASection';
-import { generateMetadata as makeMeta } from '@/lib/metadata';
-
 import { Droplets, FlaskConical, Settings, Shield, Calculator } from 'lucide-react';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
-  return makeMeta({
-    title: locale === 'fr' ? 'Nos services – WaterAud' : 'Water Treatment Services – WaterAud',
-    description:
-      locale === 'fr'
-        ? 'Du choix technologique à la mise en service, découvrez nos services de bout en bout.'
-        : 'From tech selection to commissioning, explore our end-to-end services.',
-    path: `/${locale}/services`,
-  });
-}
-
-export default async function ServicesPage({ params: { locale } }: { params: { locale: Locale } }) {
-  const t = await getTranslations(locale);
-
-  const items = t.servicesPage.items;
+export default function ServicesPage() {
   const services = [
     {
       id: 'technology-selection',
-      title: items.technologySelection.title,
-      tagline: items.technologySelection.tagline,
-      description: items.technologySelection.description,
+      title: 'Technology Selection & Trade-off Analysis',
+      tagline: 'Pick the right process the first time',
+      description:
+        'From membranes and ion-exchange to media filtration and biological treatment, we evaluate every viable option...',
       icon: <Droplets className="h-6 w-6" />,
-      features: items.technologySelection.features,
-      href: `/${locale}/contact`,
+      features: ['Reduced CAPEX risk', 'Data-driven decisions', 'Vendor-neutral recommendation'],
+      href: '#technology-selection',
     },
     {
       id: 'supplier-liaison',
-      title: items.supplierLiaison.title,
-      tagline: items.supplierLiaison.tagline,
-      description: items.supplierLiaison.description,
+      title: 'Supplier Liaison & CAPEX Estimation',
+      tagline: 'Reliable budget numbers—fast',
+      description:
+        'We prepare equipment schedules, issue RFQs to vetted vendors and normalise bids so you compare apples to apples...',
       icon: <Calculator className="h-6 w-6" />,
-      features: items.supplierLiaison.features,
-      href: `/${locale}/contact`,
+      features: ['Faster procurement', 'Transparent pricing', 'Negotiation leverage'],
+      href: '#supplier-liaison',
     },
     {
       id: 'chemical-optimisation',
-      title: items.chemicalOptimisation.title,
-      tagline: items.chemicalOptimisation.tagline,
-      description: items.chemicalOptimisation.description,
+      title: 'Chemical Optimisation & Bench Testing',
+      tagline: 'Cut chemical spend, boost performance',
+      description:
+        'On-site jar tests and pilot protocols reveal the optimal coagulant, polymer or disinfectant dose and sequence...',
       icon: <FlaskConical className="h-6 w-6" />,
-      features: items.chemicalOptimisation.features,
-      href: `/${locale}/contact`,
+      features: ['10-25% chemical savings', 'Improved effluent quality', 'Reduced sludge volumes'],
+      href: '#chemical-optimisation',
     },
     {
       id: 'commissioning-support',
-      title: items.commissioningSupport.title,
-      tagline: items.commissioningSupport.tagline,
-      description: items.commissioningSupport.description,
+      title: 'Commissioning Support & Training',
+      tagline: 'Start-up without headaches',
+      description:
+        'We craft step-by-step SOPs, lead functional testing and train operators, ensuring your plant hits design spec...',
       icon: <Settings className="h-6 w-6" />,
-      features: items.commissioningSupport.features,
-      href: `/${locale}/contact`,
+      features: ['Smooth start-up', 'Reduced downtime', 'Knowledge transfer'],
+      href: '#commissioning-support',
     },
     {
       id: 'regulatory-navigation',
-      title: items.regulatoryNavigation.title,
-      tagline: items.regulatoryNavigation.tagline,
-      description: items.regulatoryNavigation.description,
+      title: 'Regulatory Navigation',
+      tagline: 'Stay compliant, stay operational',
+      description:
+        'Our team interprets local, provincial and national water-quality regulations, prepares permit submissions...',
       icon: <Shield className="h-6 w-6" />,
-      features: items.regulatoryNavigation.features,
-      href: `/${locale}/contact`,
+      features: ['Compliance assurance', 'Reduced administrative burden', 'Avoided fines'],
+      href: '#regulatory-navigation',
     },
   ];
 
   return (
     <>
-      <PageHero
-        title={t.servicesPage.hero.title}
-        subtitle={t.servicesPage.hero.subtitle}
-      />
-
+      <PageHero title="Our Services" subtitle="End-to-end water treatment solutions tailored to your needs" />
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
@@ -95,11 +79,10 @@ export default async function ServicesPage({ params: { locale } }: { params: { l
           </div>
         </div>
       </section>
-
       <CTASection
-        title={t.servicesPage.cta.title}
-        description={t.servicesPage.cta.description}
-        primaryAction={{ label: t.servicesPage.cta.primary, href: `/${locale}/contact` }}
+        title="Ready to Get Started?"
+        description="Let's discuss how our services can help you achieve your water treatment goals"
+        primaryAction={{ label: 'Schedule Consultation', href: '/contact' }}
         variant="dark"
       />
     </>

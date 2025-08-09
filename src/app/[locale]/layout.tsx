@@ -7,11 +7,7 @@ import { SkipLink } from '@/components/layout/SkipLink';
 import { ToastContainer } from '@/components/ui/Toast';
 import { getTranslations } from '@/i18n/server';
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: Locale };
-}): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
   return {
     title: locale === 'fr' ? 'WaterAud - Traitement d’eau simplifié' : 'WaterAud - Simplified Water Treatment',
     description:
@@ -29,7 +25,6 @@ export default async function LocaleLayout({
   params: { locale: Locale };
 }) {
   const translations = await getTranslations(locale);
-
   return (
     <>
       <SkipLink />

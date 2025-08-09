@@ -3,15 +3,10 @@ import Link from 'next/link';
 import type { Locale } from '@/i18n/config';
 import type { Translations } from '@/i18n/server';
 
-type Props = {
-  locale: Locale;
-  translations: Translations;
-};
+type Props = { locale: Locale; translations: Translations };
 
 export function Navbar({ locale, translations }: Props) {
   const t = translations.nav;
-
-  // "Case Studies" deliberately omitted
   const items = [
     { href: `/${locale}`, label: t.home },
     { href: `/${locale}/services`, label: t.services },
