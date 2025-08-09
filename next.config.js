@@ -1,9 +1,9 @@
-// next.config.js
+// next.config.js — add a root redirect
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: { remotePatterns: [] }, // no private hosts
-  // no rewrites/redirects to localhost or private IPs
+  async redirects() {
+    return [{ source: '/', destination: '/en', permanent: false }];
+  },
 };
-
 module.exports = nextConfig;
