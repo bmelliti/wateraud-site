@@ -12,6 +12,11 @@ import { FAQSection } from '@/components/sections/FAQSection';
 
 import { Droplets, FlaskConical, Settings } from 'lucide-react';
 
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
 type RouteParams = { params: { locale: Locale } };
 
 export default async function HomePage({ params: { locale } }: RouteParams) {
@@ -63,14 +68,13 @@ export default async function HomePage({ params: { locale } }: RouteParams) {
   ];
 
   const faqs = [
-    { question: t.home.faq.industries.q,     answer: t.home.faq.industries.a },
-    { question: t.home.faq.pricing.q,        answer: t.home.faq.pricing.a },
-    { question: t.home.faq.vendorNeutral.q,  answer: t.home.faq.vendorNeutral.a },
+    { question: t.home.faq.industries.q,    answer: t.home.faq.industries.a },
+    { question: t.home.faq.pricing.q,       answer: t.home.faq.pricing.a },
+    { question: t.home.faq.vendorNeutral.q, answer: t.home.faq.vendorNeutral.a },
   ];
 
   return (
     <>
-      {/* Hero */}
       <PageHero title={t.home.hero.title} subtitle={t.home.hero.subtitle}>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <Link href={`/${locale}/contact`}>
@@ -79,7 +83,6 @@ export default async function HomePage({ params: { locale } }: RouteParams) {
         </div>
       </PageHero>
 
-      {/* Intro */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mx-auto max-w-prose text-center text-lg text-neutral-700 md:text-xl">
@@ -88,10 +91,8 @@ export default async function HomePage({ params: { locale } }: RouteParams) {
         </div>
       </section>
 
-      {/* Stats */}
       <StatsBlock stats={stats} variant="gradient" animate />
 
-      {/* Services */}
       <section className="bg-neutral-50 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -121,10 +122,8 @@ export default async function HomePage({ params: { locale } }: RouteParams) {
         </div>
       </section>
 
-      {/* FAQ */}
       <FAQSection faqs={faqs} className="bg-white" />
 
-      {/* Final CTA */}
       <CTASection
         title={t.home.cta.title}
         description={t.home.cta.description}

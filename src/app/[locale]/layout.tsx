@@ -7,12 +7,11 @@ import { SkipLink } from '@/components/layout/SkipLink';
 import { ToastContainer } from '@/components/ui/Toast';
 import { getTranslations } from '@/i18n/server';
 
-export const dynamicParams = false;
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'fr' }];
-}
-
-export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
   return {
     title: locale === 'fr' ? 'WaterAud - Traitement d’eau simplifié' : 'WaterAud - Simplified Water Treatment',
     description:

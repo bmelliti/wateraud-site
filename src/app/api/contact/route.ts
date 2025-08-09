@@ -1,71 +1,59 @@
 // src/app/api/contact/route.ts
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Check if API key exists
-if (!process.env.RESEND_API_KEY) {
-  console.error('RESEND_API_KEY is not set in environment variables');
-}
+export const runtime = 'nodejs'; // avoid Edge runtime
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+type ContactPayload = {
+  name?: string;
+  email?: string;
+  company?: string;
+  phone?: string;
+  service?: string;
+  message?: string;
+};
 
-export async function POST(request: NextRequest) {
-  console.log('API Route: Received contact form submission'); // Debug log
-
+export async function POST(req: Request) {
   try {
-    const body = await request.json();
-    console.log('Form data received:', body); // Debug log
+    const { RESEND_API_KEY, EMAIL_FROM, EMAIL_TO } = process.env;
 
-    const { name, email, company, phone, service, message } = body;
-
-    // Validation
-    if (!name || !email || !message) {
-      console.error('Missing required fields:', { name: !!name, email: !!email, message: !!message });
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+    if (!RESEND_API_KEY || !EMAIL_FROM || !EMAIL_TO) {
+      console.error('Missing env vars for contact API');
+      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
     }
 
-    console.log('Attempting to send email via Resend...'); // Debug log
+    const data = (await req.json()) as ContactPayload;
 
-    // Send email
-   const { data, error } = await resend.emails.send({
-        from: 'Contact Form <contact@wateraud.com>', // Use your verified domain
-        to: 'brahim.melliti@wateraud.com', // Now this will work
-        replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
+    if (!data.name || data.name.trim().length < 2) return NextResponse.json({ error: 'Invalid name' }, { status: 400 });
+    if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+    if (!data.message || data.message.trim().length < 10) return NextResponse.json({ error: 'Invalid message' }, { status: 400 });
+
+    const resend = new Resend(RESEND_API_KEY);
+
+    const { error } = await resend.emails.send({
+      from: EMAIL_FROM,
+      to: EMAIL_TO,
+      subject: `New contact from ${data.name}`,
+      reply_to: data.email,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
-        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
-        ${service ? `<p><strong>Service Interest:</strong> ${service}</p>` : ''}
-        <h3>Message:</h3>
-        <p style="white-space: pre-wrap;">${message}</p>
+        <p><strong>Name:</strong> ${data.name ?? ''}</p>
+        <p><strong>Email:</strong> ${data.email ?? ''}</p>
+        <p><strong>Company:</strong> ${data.company ?? ''}</p>
+        <p><strong>Phone:</strong> ${data.phone ?? ''}</p>
+        <p><strong>Service:</strong> ${data.service ?? ''}</p>
+        <p><strong>Message:</strong><br/>${(data.message ?? '').replace(/\n/g, '<br/>')}</p>
       `,
     });
 
     if (error) {
-      console.error('Resend API error:', error);
-      return NextResponse.json(
-        { error: `Resend error: ${error.message || 'Unknown error'}` },
-        { status: 500 }
-      );
+      console.error('Resend error:', error);
+      return NextResponse.json({ error: 'Failed to send email' }, { status: 502 });
     }
 
-    console.log('Email sent successfully:', data); // Debug log
-
-    return NextResponse.json(
-      { success: true, message: 'Message sent successfully' },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Unexpected error in contact API:', error);
-    return NextResponse.json(
-      { error: 'Internal server error: ' + (error instanceof Error ? error.message : 'Unknown error') },
-      { status: 500 }
-    );
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error('Contact API exception:', err);
+    return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }
