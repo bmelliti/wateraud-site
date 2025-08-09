@@ -1,5 +1,6 @@
 // TEMP SANITY CHECK — replace this file
 // src/app/[locale]/page.tsx
+
 export const dynamicParams = false;
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'fr' }];
