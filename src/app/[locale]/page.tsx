@@ -1,18 +1,20 @@
-// TEMP SANITY CHECK — replace this file
 // src/app/[locale]/page.tsx
-
+// Keep these so the page itself is definitely statically generated
 export const dynamicParams = false;
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'fr' }];
 }
-export default function Page({ params }: { params: { locale: string } }) {
+
+export default function LocalizedHome({ params }: { params: { locale: string } }) {
   return (
-    <main style={{ padding: 40, fontFamily: 'system-ui, sans-serif' }}>
-      <h1>OK: /{params.locale}</h1>
-      <p>This is a minimal test page to confirm routing works on Vercel.</p>
-      <ul>
-        <li><a href="/en">/en</a></li>
-        <li><a href="/fr">/fr</a></li>
+    <main className="px-6 py-16">
+      <h1 className="text-3xl font-bold">OK: /{params.locale}</h1>
+      <p className="mt-2 text-neutral-700">
+        Minimal page to confirm routing works. Replace with your real content after verification.
+      </p>
+      <ul className="mt-6 list-disc pl-5">
+        <li><a className="text-primary-600 underline" href="/en">/en</a></li>
+        <li><a className="text-primary-600 underline" href="/fr">/fr</a></li>
       </ul>
     </main>
   );

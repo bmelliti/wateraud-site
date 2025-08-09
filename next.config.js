@@ -1,5 +1,5 @@
-// next.config.js — add a root redirect
-/** @type {import('next').NextConfig} */
+// next.config.js — belt & suspenders redirect for "/"
+ /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   async redirects() {
