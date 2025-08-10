@@ -10,6 +10,8 @@ import '@/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'fr' }];
 }

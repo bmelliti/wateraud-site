@@ -7,6 +7,14 @@ import { PageHero } from '@/components/sections/PageHero';
 import { Card, CardContent } from '@/components/ui/Card';
 import { generateMetadata as makeMeta } from '@/lib/metadata';
 
+// ⚠️ CRITICAL: ADD THESE EXPORTS TO EVERY PAGE
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+
+
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
   return makeMeta({
     title: locale === 'fr' ? 'À propos de WaterAud' : 'About WaterAud',

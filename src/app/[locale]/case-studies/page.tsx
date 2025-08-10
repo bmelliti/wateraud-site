@@ -5,6 +5,14 @@ import { getTranslations } from '@/i18n/server';
 import Link from 'next/link';
 import { generateMetadata as makeMeta } from '@/lib/metadata';
 
+
+// ⚠️ CRITICAL: ADD THESE EXPORTS TO EVERY PAGE
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+
 export async function generateMetadata({
   params: { locale },
 }: {

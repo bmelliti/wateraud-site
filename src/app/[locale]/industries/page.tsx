@@ -8,6 +8,15 @@ import { Button } from '@/components/ui/Button';
 import { generateMetadata as makeMeta } from '@/lib/metadata';
 import Link from 'next/link';
 
+
+
+// ⚠️ CRITICAL: ADD THESE EXPORTS TO EVERY PAGE
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
   return makeMeta({
     title: locale === 'fr' ? 'Secteurs desservis – WaterAud' : 'Industries We Serve – WaterAud',

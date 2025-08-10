@@ -12,6 +12,14 @@ import { FAQSection } from '@/components/sections/FAQSection';
 
 import { Droplets, FlaskConical, Settings } from 'lucide-react';
 
+
+
+// ⚠️ CRITICAL: ADD THESE TWO EXPORTS
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
 type RouteParams = { params: { locale: Locale } };
 
 export default async function HomePage({ params: { locale } }: RouteParams) {

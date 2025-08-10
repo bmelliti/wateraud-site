@@ -5,6 +5,14 @@ import { getTranslations } from '@/i18n/server';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { generateMetadata as makeMeta } from '@/lib/metadata';
 
+
+// ⚠️ CRITICAL: ADD THESE EXPORTS TO EVERY PAGE
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
   return makeMeta({
     title: locale === 'fr' ? 'Contact – WaterAud' : 'Contact – WaterAud',

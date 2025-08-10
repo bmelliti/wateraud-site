@@ -10,6 +10,14 @@ import { generateMetadata as makeMeta } from '@/lib/metadata';
 
 import { Droplets, FlaskConical, Settings, Shield, Calculator } from 'lucide-react';
 
+
+// ⚠️ CRITICAL: ADD THESE EXPORTS TO EVERY PAGE
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+
 export async function generateMetadata({ params: { locale } }: { params: { locale: Locale } }): Promise<Metadata> {
   return makeMeta({
     title: locale === 'fr' ? 'Nos services – WaterAud' : 'Water Treatment Services – WaterAud',
