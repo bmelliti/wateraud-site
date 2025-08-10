@@ -1,0 +1,1 @@
+export default function En() { return <main style={{padding:40}}>EN OK</main>; }

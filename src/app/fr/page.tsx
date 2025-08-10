@@ -1,0 +1,1 @@
+export default function Fr() { return <main style={{padding:40}}>FR OK</main>; }
