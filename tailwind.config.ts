@@ -11,17 +11,17 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: '#ecfeff',
-          100: '#cffafe',
-          200: '#a5f3fc',
-          300: '#67e8f9',
-          400: '#22d3ee',
-          500: '#06b6d4',  // Your water blue #06B6D4
-          600: '#0891b2',  // Darker water blue for hover states
-          700: '#0e7490',
-          800: '#155e75',
-          900: '#164e63',
-          950: '#083344',
+          50: '#eff8ff',
+          100: '#dbeefe',
+          200: '#bfe3fd',
+          300: '#93d3fc',
+          400: '#60bdf8',
+          500: '#3ba5f4',  // Bright logo blue
+          600: '#3498eb',  // Main brand blue (matches logo)
+          700: '#2780d8',  // Hover state
+          800: '#2665ae',
+          900: '#235589',
+          950: '#183353',
         },
         accent: {
           50: '#f0fdf4',
@@ -48,6 +48,16 @@ const config: Config = {
           900: '#171717',
           950: '#0a0a0a',
         },
+        // Add gradient colors for special effects
+        'water-gradient': {
+          from: '#3498eb',  // Logo blue
+          via: '#5dade2',   // Mid blue
+          to: '#85c1e9',    // Light blue
+        },
+      },
+      backgroundImage: {
+        'water-gradient': 'linear-gradient(135deg, #3498eb 0%, #5dade2 50%, #85c1e9 100%)',
+        'water-gradient-radial': 'radial-gradient(circle, #85c1e9 0%, #3498eb 100%)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
