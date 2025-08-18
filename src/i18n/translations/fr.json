@@ -27,12 +27,12 @@
       "exploreSuffix": ".",
       "techSelection": {
         "title": "Sélection technologique et analyse comparative",
-        "description": "Comparaison basée sur les données des technologies de clarification, membranes, échange d’ions, filtration et plus",
+        "description": "Comparaison basée sur les données des technologies de décantation, membranes, échange ionique, filtration et plus",
         "features": ["Décisions de conception éclairées", "Réduction du risque CAPEX"]
       },
       "chemOptim": {
         "title": "Optimisation chimique et essais en laboratoire",
-        "description": "Essais de jarres sur site et protocoles pilotes",
+        "description": "Jar tests sur site et protocoles pilotes",
         "features": ["10–25 % d’économies de produits chimiques", "Meilleure qualité d’effluent"]
       },
       "commissioning": {
